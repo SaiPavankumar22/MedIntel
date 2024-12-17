@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Prescriptions</title>
+</head>
+<body>
+    <h1>Medical Prescriptions</h1>
+    <p>Understand your prescriptions, dosage, and potential side effects.</p>
+    <form action="/analyze_prescription" method="POST">
+        <label for="prescription">Enter Prescription Details:</label>
+        <textarea id="prescription" name="prescription" rows="4" cols="50" required></textarea>
+        <button type="submit">Analyze</button>
+    </form>
+    <div class="text-center mt-4">
+        <a href="/dashboard" class="btn btn-dashboard">Go to Dashboard</a>
+    </div>
+</body>
+</html>

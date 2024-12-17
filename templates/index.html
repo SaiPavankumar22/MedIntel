@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #ffffff;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: url('/static/images/hero.jpg') no-repeat center center/cover;
+    color: black;
+    padding: 5em 1em;
+    text-align: center;
+}
+
+.blocks {
+    display: flex;
+    gap: 2em;
+    padding: 2em;
+}
+
+.block {
+    flex: 1;
+    text-align: center;
+}
+
+.block img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.login-form, .signup-form {
+    max-width: 400px;
+    margin: 2em auto;
+    padding: 2em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2, .signup-form h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+.img{
+    height: 50px;
+    width: 50px;
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <a href="#"><img src="/static/images/logo.png" class="img"/></a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/signin">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Your Path to Smarter Healthcare</h1>
+        <p>Transforming health through technology and care.</p>
+        <a href="#services" class="btn">Explore More</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="blocks">
+        <div class="block">
+            <img src="/static/images/medicalHistory.jpg" alt="Medical History">
+            <h3>Medical History Management</h3>
+            <p>Store and manage your medical records digitally.</p>
+        </div>
+        <div class="block">
+            <img src="/static/images/insights.jpg" alt="Health Insights">
+            <h3>Health Insights</h3>
+            <p>Track and visualize your health trends.</p>
+        </div>
+        <div class="block">
+            <img src="/static/images/doct.avif" alt="Specialist">
+            <h3>Specialist Recommendations</h3>
+            <p>Find the best specialists for your needs.</p>
+        </div>
+    </section>
+    <footer>
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form action="/newsletter" method="POST">
+            <input type="email" name="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="/contact" method="POST">
+            
+        </form>
+    </section>
+
+    <!-- Footer -->
+
+        <p>&copy; 2024 MedIntel. All rights reserved.</p>
+    </footer>
+</body>
+</html>

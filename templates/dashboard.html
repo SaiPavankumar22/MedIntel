@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Medical Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        #wrapper {
+            display: flex;
+            transition: all 0.3s ease;
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: 0;
+        }
+
+        #sidebar-wrapper {
+            min-width: 250px;
+            max-width: 250px;
+            background-color: #343a40;
+            color: #fff;
+
+            margin-left: -250px;
+            transition: all 0.3s ease;
+        }
+        .img-logo{
+            width: 40px;
+            height: 40px;
+            margin-left: 5px;
+        }
+        #sidebar-wrapper .list-group-item {
+            border: none;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        #sidebar-wrapper .list-group-item:hover {
+            background-color: #495057;
+        }
+
+        #page-content-wrapper {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+        }
+
+        .card-body h6 {
+            color: gray;
+            font-size: 14px;
+        }
+        
+        .card-body h4 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+        }
+        .head{
+            text-align: center;
+            justify-content: center;
+            justify-items: center;
+        }
+        .chart-container {
+            position: relative;
+            height: 200px;
+        }
+
+        .chart-container canvas {
+            display: block;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            #sidebar-wrapper {
+                margin-left: -250px;
+            }
+
+            #wrapper.toggled #sidebar-wrapper {
+                margin-left: 0;
+            }
+
+            .chart-container {
+                height: 150px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-dark border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading text-light text-center py-4">
+                <i class="fas fa-user-md fa-2x"></i> Dashboard
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="/dashboard" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="/medical_history" class="list-group-item list-group-item-action">Medical Records</a>
+                <a href="/research" class="list-group-item list-group-item-action">Reasearch</a>
+                <a href="/specialists" class="list-group-item list-group-item-action">specialists and healthcare facilities</a>
+                <a href="/accounts" class="list-group-item list-group-item-action">Account</a>
+            </div>
+        </div>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-white border-bottom ">
+                <button class="btn btn-light" id="menu-toggle"><i class="fas fa-bars"></i></button>
+                <h1 class="head text-center col">
+                    <img src="static\images\logo.png" alt="" class="img-logo mr-2 ">MedIntel</h1>
+            </nav>
+            <div class="container-fluid py-4">
+                <div class="row main">
+                    <div class="col">
+                        <!-- Heart Rate -->
+                        <div class="col-md-11 mb-2 ">
+                            <div class="card shadow-sm">
+                                <div class="card-body text-center">
+                                    <h6>Heart Rate</h6>
+                                    <h4>75/118</h4>
+                                    <div class="chart-container">
+                                        <canvas id="heartRateChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center left-0">
+                        <div class=" row">
+                            <!-- Fever -->
+                            <div class="col-md-4 mb-5">
+                                <div class="card shadow-sm">
+                                    <div class="card-body text-center">
+                                        <h6>Fever</h6>
+                                        <h4>100.8°F</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blood Pressure -->
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow-sm">
+                                    <div class="card-body text-center">
+                                        <h6>Blood Pressure</h6>
+                                        <h4>75/124</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bill Due -->
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow-sm">
+                                    <div class="card-body text-center">
+                                        <h6>Bill Due</h6>
+                                        <h4>$214.86</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Sugar Levels -->
+                            <div class="col-md-4 mb-6">
+                                <div class="card shadow-sm">
+                                    <div class="card-body text-center">
+                                        <h6>Sugar Levels</h6>
+                                        <h4>120 mg/dL</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- BMI -->
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow-sm">
+                                    <div class="card-body text-center">
+                                        <h6>BMI</h6>
+                                        <h4>24.9</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Body Details -->
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow-sm">
+                                    <div class="card-body text-center">
+                                        <h6>Body Details</h6>
+                                        <h4>Normal</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Personal Medical History -->
+                <div class="col-md-4 mb-3 ">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h6>Recent Visits</h6>
+                            <p>Dr. Smith - 15 Dec 2024</p>
+                            <p>Dr. Brown - 10 Nov 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h6>Medications</h6>
+                            <p>Aspirin - Daily</p>
+                            <p>Metformin - Twice a Day</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h6>Allergies</h6>
+                            <p>Peanuts</p>
+                            <p>Penicillin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+            <!-- Heart ECG -->
+            <div class="col-md-6">
+                <div class="col-md-12 mb-12">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5>Heart ECG</h5>
+                            <div class="chart-container">
+                                <canvas id="ecgChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Condition Over Time -->
+            <div class="col-md-6">
+                <div class="col-md-12 mb-4 w-">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5>Condition Over Time</h5>
+                            <div class="chart-container">
+                                <canvas id="conditionChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Bootstrap and JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Toggle Sidebar
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+        // Heart Rate Chart
+        var ctx = document.getElementById('heartRateChart').getContext('2d');
+        var heartRateChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4'],
+                datasets: [{
+                    label: 'Heart Rate',
+                    data: [152, 145, 138, 148],
+                    borderColor: 'blue',
+                    fill: false
+                }]
+            },
+            options: {
+                maintainAspectRatio: false
+            }
+        });
+
+        // Heart ECG Chart
+        var ecgCtx = document.getElementById('ecgChart').getContext('2d');
+        var ecgChart = new Chart(ecgCtx, {
+            type: 'line',
+            data: {
+                labels: ['1', '2', '3', '4', '5', '6'],
+                datasets: [{
+                    label: 'Heart ECG',
+                    data: [70, 75, 65, 78, 72, 80],
+                    borderColor: 'red',
+                    borderWidth: 1,
+                    pointBackgroundColor: 'black',
+                    pointRadius: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                maintainAspectRatio: false
+            }
+        });
+
+        // Condition Over Time Chart
+        var conditionCtx = document.getElementById('conditionChart').getContext('2d');
+        var conditionChart = new Chart(conditionCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Condition',
+                    data: [80, 85, 78, 88],
+                    borderColor: 'green',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+
+</html>
