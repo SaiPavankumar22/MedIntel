@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -390,4 +391,398 @@ body {
     border-radius: 12px;
     margin-bottom: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f5ff 0%, #e6f0ff 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.page-title h1 {
+    color:  #1a237e;
+    font-size: 15px;
+    font-weight: ;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.edit-btn, .save-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.edit-btn {
+    background: linear-gradient(135deg, #e8f0fe, #d2e3fc);
+    color: #1a73e8;
+}
+
+.edit-btn:hover {
+    background: linear-gradient(135deg, #d2e3fc, #c6dafc);
+    transform: translateY(-2px);
+}
+
+.save-btn {
+    background: linear-gradient(135deg, #1a73e8, #4285f4);
+    color: white;
+}
+
+.save-btn:hover {
+    background: linear-gradient(135deg, #1557b0, #1a73e8);
+    transform: translateY(-2px);
+}
+
+.profile-image {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.profile-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #e8f0fe;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: scale(1.05);
+}
+
+.camera-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #1a73e8, #4285f4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.camera-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.4);
+}
+
+.profile-header {
+    margin-bottom: 40px;
+}
+
+.email-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #5f6368;
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.email-container:hover {
+    background: #e8f0fe;
+    transform: translateY(-2px);
+}
+
+.email-container i {
+    color: #1a73e8;
+    font-size: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.info-item {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    padding: 25px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid #e8f0fe;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #1a73e8;
+}
+
+.info-item label {
+    display: block;
+    color: #1a73e8;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.info-item label i {
+    margin-right: 8px;
+}
+
+.info-item span {
+    display: block;
+    color: #5f6368;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.info-item span:hover {
+    background: #e8f0fe;
+    color: #1a73e8;
+}
+
+.gender-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gender-options label {
+    color: #5f6368;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gender-options label:hover {
+    color: #1a73e8;
+}
+
+.history-section {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.history-section h2 {
+    color: #1a73e8;
+    margin-bottom: 25px;
+    font-size: 24px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.history-item {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.history-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.history-item label {
+    display: block;
+    color: #1a73e8;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.history-item textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 15px;
+    border: 2px solid #e8f0fe;
+    border-radius: 12px;
+    resize: none;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5f6368;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.history-item textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    background-color: #fff;
+}
+
+[contenteditable="true"] {
+    border: 2px solid #1a73e8;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.1);
+}
+.linked-accounts {
+    width: 100%;
+    padding: 1rem;
+    background: white;
+    border: 2px solid #1a237e;
+    color: #1a237e;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.linked-accounts:hover {
+    background: #1a237e;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    color: #1a73e8;
+    margin-bottom: 25px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-btn {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+#uploadBtn {
+    background: linear-gradient(135deg, #e8f0fe, #d2e3fc);
+    color: #1a73e8;
+}
+
+#uploadBtn:hover {
+    background: linear-gradient(135deg, #d2e3fc, #c6dafc);
+    transform: translateY(-2px);
+}
+
+#captureBtn, #snapBtn {
+    background: linear-gradient(135deg, #1a73e8, #4285f4);
+    color: white;
+}
+
+#captureBtn:hover, #snapBtn:hover {
+    background: linear-gradient(135deg, #1557b0, #1a73e8);
+    transform: translateY(-2px);
+}
+
+#retakeBtn {
+    background: linear-gradient(135deg, #f44336, #e53935);
+    color: white;
+}
+
+#retakeBtn:hover {
+    background: linear-gradient(135deg, #e53935, #d32f2f);
+    transform: translateY(-2px);
+}
+
+#cameraContainer {
+    margin-top: 20px;
+}
+
+#cameraPreview {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+>>>>>>> 731d027ef8dbf9ec6dc2f270202fbe43ada2fd9e
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,3 +78,84 @@
         {% endfor %}
     </div>
 </div>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5fafd;
+            font-family: 'Arial', sans-serif;
+        }
+        .folder-block {
+            border: 1px solid #17a2b8;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            background-color: #e3f2fd;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        .file-link {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .file-link:hover {
+            text-decoration: underline;
+        }
+        .folder-container {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>{{ directory.name }}</title>
+</head>
+<body>
+<div class="container my-5">
+    <h1 class="text-primary text-center">{{ directory.name }}</h1>
+    <a href="/medical_records" class="btn btn-secondary mb-3">Back</a>
+
+    <div class="d-flex justify-content-around mb-4">
+        {% for folder_name in directory.folders.keys() %}
+        <div>
+            <h5 class="text-center">{{ folder_name.capitalize() }}</h5>
+            <form method="POST" action="/upload_file/{{ directory._id }}/{{ folder_name }}" enctype="multipart/form-data" class="mb-3">
+                <input type="date" name="test_date" class="form-control mb-2" required>
+                <div class="input-group">
+                    <input type="file" name="file" class="form-control" required>
+                    <button type="submit" class="btn btn-success">Upload</button>
+                </div>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        {% for folder_name, files in directory.folders.items() %}
+        <div class="col-md-4">
+            <div class="folder-block">
+                <h5 class="text-info text-center">{{ folder_name.capitalize() }}</h5>
+                <ul>
+                    {% for file in files|sort(attribute='test_date') %}
+                    <li>
+                        <a href="/view_file/{{ directory._id }}/{{ folder_name }}/{{ file.filename }}" class="file-link">
+                            {{ file.filename }} - {{ file.test_date }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+>>>>>>> 731d027ef8dbf9ec6dc2f270202fbe43ada2fd9e

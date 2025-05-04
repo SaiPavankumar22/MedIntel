@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,4 +105,112 @@
 
     <script src="{{ url_for('static', filename='js/account.js') }}"></script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles1.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+    
+    <div class="container">
+        <button id="editBtn" class="edit-btn">Edit</button>
+        <button id="saveBtn" class="save-btn" style="display: none;">Save</button>
+        
+        <div class="profile-section">
+            <div class="profile-image">
+                <img id="profileImg" src="https://via.placeholder.com/150" alt="Profile Image">
+                <button id="cameraBtn" class="camera-btn"><i class="fas fa-camera"></i></button>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                <video id="videoElement" style="display: none;" playsinline autoplay></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+            </div>
+             <div class="page-title">
+        <h1 id="name" contenteditable="false">John Smith</h1>
+    </div>
+        <br>
+
+            <div class="profile-header">
+                <div class="email-container">
+                    <i class="fas fa-envelope"></i>
+                    <p id="email" contenteditable="false">j.smith@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <label><i class="fas fa-calendar"></i> Date of Birth</label>
+                    <span id="dob" contenteditable="false">03/13/1998</span>
+                </div>
+                <div class="info-item">
+                    <label><i class="fas fa-user-clock"></i> Age</label>
+                    <span id="age" contenteditable="false">22y 4m</span>
+                </div>
+                <div class="info-item">
+                    <label><i class="fas fa-ruler-vertical"></i> Height</label>
+                    <span id="height" contenteditable="false">5'9"</span>
+                </div>
+                <div class="info-item">
+                    <label><i class="fas fa-weight"></i> Weight</label>
+                    <span id="weight" contenteditable="false">168 lb</span>
+                </div>
+                <div class="info-item">
+                    <label><i class="fas fa-tint"></i> Blood Group</label>
+                    <span id="bloodGroup" contenteditable="false">O+</span>
+                </div>
+                <div class="info-item">
+                    <label><i class="fas fa-venus-mars"></i> Gender</label>
+                    <div class="gender-options">
+                        <label><input type="radio" name="gender" value="Male" checked disabled> Male</label>
+                        <label><input type="radio" name="gender" value="Female" disabled> Female</label>
+                        <label><input type="radio" name="gender" value="Other" disabled> Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h2><i class="fas fa-history"></i> Previous History</h2>
+                <div class="history-grid">
+                    <div class="history-item">
+                        <label><i class="fas fa-procedures"></i> Past Surgeries</label>
+                        <textarea id="surgeries" disabled>Appendectomy, Tonsillectomy, etc...</textarea>
+                    </div>
+                    <div class="history-item">
+                        <label><i class="fas fa-pills"></i> Medications</label>
+                        <textarea id="medications" disabled>Insulin, Painkillers, etc...</textarea>
+                    </div>
+                    <div class="history-item">
+                        <label><i class="fas fa-allergies"></i> Allergies</label>
+                        <textarea id="allergies" disabled>Dust, Pollen, etc...</textarea>
+                    </div>
+                    <div class="history-item">
+                        <label><i class="fas fa-syringe"></i> Immunizations</label>
+                        <textarea id="immunizations" disabled>COVID-19, Flu Shot, etc...</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <h2><i class="fas fa-camera"></i> Choose Option</h2>
+            <button id="uploadBtn" class="modal-btn"><i class="fas fa-upload"></i> Upload Photo</button>
+            <button id="captureBtn" class="modal-btn"><i class="fas fa-camera"></i> Take Photo</button>
+            <div id="cameraContainer" style="display: none;">
+                <video id="cameraPreview" autoplay playsinline></video>
+                <button id="snapBtn" class="modal-btn"><i class="fas fa-camera"></i> Capture</button>
+                <button id="retakeBtn" class="modal-btn" style="display: none;"><i class="fas fa-redo"></i> Retake</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/account.js') }}"></script>
+</body>
+>>>>>>> 731d027ef8dbf9ec6dc2f270202fbe43ada2fd9e
 </html>

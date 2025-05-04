@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Flask
 Flask-PyMongo
 PyMuPDF
@@ -9,3 +10,16 @@ pytesseract
 langchain-groq
 numpy
 pandas
+=======
+Flask
+Flask-PyMongo
+PyMuPDF
+gspread
+google-auth-oauthlib
+google-auth
+Pillow
+pytesseract
+langchain-groq
+numpy
+pandas
+>>>>>>> 731d027ef8dbf9ec6dc2f270202fbe43ada2fd9e

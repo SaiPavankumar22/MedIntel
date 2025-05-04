@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -308,4 +309,316 @@
     </script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedIntel - Healthcare Intelligence Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/medintel.png') }}" alt="MedIntel Logo" class="logo">
+                <span>MedIntel</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#specialists">Specialists</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login-btn" onclick="window.location.href='/login'">Login</button>
+                <button class="signup-btn" onclick="window.location.href='/signup'">Sign Up</button>
+            </div>
+            
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Welcome to MedIntel</h1>
+            <p>Advanced Healthcare Intelligence Platform</p>
+            <button class="cta-btn">Get Started</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Why Choose Us?</h2>
+        <div class="about-cards">
+            <div class="card">
+                <i class="fas fa-fingerprint"></i>
+                <h3>Advanced Security</h3>
+                <p>State-of-the-art encryption and data protection for your medical records</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-rocket"></i>
+                <h3>24/7 Availability</h3>
+                <p>Round-the-clock access to healthcare services and support</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-hand-holding-medical"></i>
+                <h3>Expert Support</h3>
+                <p>Dedicated team of healthcare professionals at your service</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-microscope"></i>
+                <h3>Advanced Technology</h3>
+                <p>Cutting-edge medical technology and AI-powered diagnostics</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>Our Features</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <i class="fas fa-brain"></i>
+                <h3>AI Insights</h3>
+                <p>Advanced algorithms for precise predictions</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-virus"></i>
+                <h3>Secure Data</h3>
+                <p>Enterprise-grade security measures</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-line"></i> <!-- Corrected icon -->
+                <h3>Analytics</h3>
+                <p>Real-time health data analysis</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-sliders-h"></i>
+                <h3>Customizable</h3>
+                <p>Tailored to your needs</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="specialists">
+        <h2>Our Specialists</h2>
+        <div class="specialist-slider">
+            <div class="specialists-container">
+                <div class="specialist">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+                        alt="Dr. Sarah Smith">
+                    <h3>Dr. Sarah Smith</h3>
+                    <p>❤️ Cardiology</p>
+                    <span>15 years experience</span>
+                </div>
+                <div class="specialist">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+                        alt="Dr. John Davis">
+                    <h3>Dr. John Davis</h3>
+                    <p>🧠 Neurology</p>
+                    <span>12 years experience</span>
+                </div>
+                <div class="specialist">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+                        alt="Dr. Emily Chen">
+                    <h3>Dr. Emily Chen</h3>
+                    <p>👶 Pediatrics</p>
+                    <span>10 years experience</span>
+                </div>
+                <div class="specialist">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.i2uHHLqb_uG5kD1UzUle9AHaHa&pid=Api&P=0&h=180"
+                        alt="Dr. Chen">
+                    <h3>Dr. Chen</h3>
+                    <p>🦠 Oncology</p>
+                    <span>12 years experience</span>
+                </div>
+                <div class="specialist">
+                    <img src="https://www.sonicseo.com/wp-content/uploads/2020/07/surgeon-768x768.jpg" alt="Dr. Emily">
+                    <h3>Dr. Emily</h3>
+                    <p>👁️ Ophthalmology</p>
+                    <span>7 years experience</span>
+                </div>
+            </div>
+            <button class="prev-btn">&lt;</button>
+            <button class="next-btn">&gt;</button>
+        </div>
+    </section>
+
+
+    <section id="blog">
+        <h2>Latest Healthcare Insights</h2>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="AI in Healthcare">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">March 15, 2024</span>
+                    <h3>The Future of AI in Healthcare</h3>
+                    <p>Exploring how artificial intelligence is revolutionizing medical diagnostics and patient care.
+                    </p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Digital Health">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">March 12, 2024</span>
+                    <h3>Digital Health Transformation</h3>
+                    <p>How digital technologies are improving healthcare delivery and patient outcomes.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.B8wUxKJw48DsL3eth-Ls6gHaDt&pid=Api&P=0&h=180"
+                        alt="Medical Research">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">March 10, 2024</span>
+                    <h3>Breakthroughs in Medical Research</h3>
+                    <p>Latest discoveries and innovations shaping the future of medicine.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Medical Center Dr, Healthcare City</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>contact@medintel.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About MedIntel</h3>
+                <p>Leading healthcare intelligence platform providing innovative solutions for medical professionals.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MedIntel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active navigation link highlighting
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Specialists slider
+        const specialistsContainer = document.querySelector('.specialists-container');
+        const specialists = document.querySelectorAll('.specialist');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentIndex = 0;
+        const specialistsPerView = Math.floor(specialistsContainer.clientWidth / 320);
+        const maxIndex = specialists.length - specialistsPerView;
+
+        function updateSlider() {
+            const offset = -currentIndex * 320;
+            specialistsContainer.style.transform = `translateX(${offset}px)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = Math.max(currentIndex - 1, 0);
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = Math.min(currentIndex + 1, maxIndex);
+            updateSlider();
+        });
+
+        // Update specialists per view on window resize
+        window.addEventListener('resize', () => {
+            const newSpecialistsPerView = Math.floor(specialistsContainer.clientWidth / 320);
+            if (newSpecialistsPerView !== specialistsPerView) {
+                currentIndex = 0;
+                updateSlider();
+            }
+        });
+    </script>
+</body>
+
+>>>>>>> 731d027ef8dbf9ec6dc2f270202fbe43ada2fd9e
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,3 +156,162 @@
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Medical Repository</title>
+    <style>
+        body {
+            background-color: #f5fafd;
+            font-family: 'Arial', sans-serif;
+        }
+        .repository-title {
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        .hospital-card {
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: #eaf6ff;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .hospital-card:hover {
+            transform: scale(1.05);
+        }
+        .card-container {
+            margin-top: 30px;
+        }
+        .hospital-input {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #343a40;
+            color: white;
+            overflow-y: auto;
+            transition: 0.3s;
+            padding-top: 80px; /* Push content below the header and icon */
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 20px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar ul li a:hover {
+            background-color: #495057;
+        }
+        .sidebar .account {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .toggle-sidebar {
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        .sidebar-open {
+            left: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="/dashboard" onclick="showContent('dashboard')">📊 Dashboard</a></li>
+        <li><a href="/medical_records" onclick="showContent('medical-records')">📋 Medical Records</a></li>
+        <li><a href="/research" onclick="showContent('research')">🔬 Research</a></li>
+        <li><a href="/account" onclick="showContent('account')">👤 Account</a></li>
+
+    </ul>
+    
+</div>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <span class="toggle-sidebar" onclick="toggleSidebar()">☰</span>
+    </div>
+</nav>
+
+    <div class="container my-5">
+        <!-- Page Title -->
+        <header class="text-center">
+            <h1 class="repository-title">Medical Repository</h1>
+        </header>
+        
+        <!-- Add Hospital Form -->
+        <section class="hospital-input">
+            <form method="POST" action="/create_directory" class="row g-2 align-items-center">
+                <div class="col">
+                    <input 
+                        type="text" 
+                        name="hospital_name" 
+                        class="form-control" 
+                        placeholder="Enter Hospital Name" 
+                        required
+                    />
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Hospital Directories -->
+        <section>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 card-container">
+                {% for directory in directories %}
+                <div class="col">
+                    <div class="hospital-card">
+                        <h5 class="mb-3">{{ directory.name }}</h5>
+                        <a 
+                            href="/open_directory/{{ directory._id }}" 
+                            class="btn btn-outline-primary">
+                            Open Directory
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('sidebar-open');
+        }
+    </script>
+</body>
+</html>
+>>>>>>> 731d027ef8dbf9ec6dc2f270202fbe43ada2fd9e
