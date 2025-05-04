@@ -1,0 +1,11 @@
+Flask
+Flask-PyMongo
+PyMuPDF
+gspread
+google-auth-oauthlib
+google-auth
+Pillow
+pytesseract
+langchain-groq
+numpy
+pandas
