@@ -20,7 +20,7 @@ import pandas as pd  # Import pandas
 
 app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY', 'your_default_secret_key')
-app.config["MONGO_URI"] = "mongodb://localhost:27017/med"  # Ensure this matches your MongoDB setup
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost:27017/med')
 mongo = PyMongo(app)
 
 # Directories
@@ -33,25 +33,25 @@ mongo.db.directories.create_index("name", unique=True)
 # LLM setup
 llm = ChatGroq(
     temperature=0.6,
-    groq_api_key='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',
+    groq_api_key=os.getenv('GROQ_API_KEY'),
     model_name="llama-3.3-70b-versatile"
 )
 
 # Google Sheets setup
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = 'C:/Users/dsaip/OneDrive/Documents/testing/dashboard/static/medintel-dashboard-e69611cb2443.json'
+SERVICE_ACCOUNT_FILE = os.getenv('GOOGLE_SERVICE_ACCOUNT_FILE')
 
 credentials = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 client = gspread.authorize(credentials)
 
 # Google Sheet IDs
 SHEET_IDS = {
-    "Blood Test": '1K4bqkK0rAdP0DUce8ZHJfuizaK3ooI6wx-S8qm3uEp0',
-    "Urine Test": '1Om3WmPtqhCuNGuzxlxfLXuHaoRxVOXkv74vG1uP9aZY',
-    "ECG": '1k7sdd-1keDUHFqvRPBENZPTasqvBR1GxdL3DrBcrtv4',
-    "Diabetes": '1BKRvEQMYlOTvV_xv1uH-OYVJx60gEb0_YTuZ1R4lNGI',
-    "Cholesterol": '1QlPwFp09Fjl1-W4axVN6tKuaoVVKAjzn6u5Mv3LY8_U',
-    "Cardiology": '1wAw5AFa05cOl35yjuoOfu0zFuH3rhpHB1H14xMaesb4'
+    "Blood Test": os.getenv('BLOOD_TEST_SHEET_ID'),
+    "Urine Test": os.getenv('URINE_TEST_SHEET_ID'),
+    "ECG": os.getenv('ECG_SHEET_ID'),
+    "Diabetes": os.getenv('DIABETES_SHEET_ID'),
+    "Cholesterol": os.getenv('CHOLESTEROL_SHEET_ID'),
+    "Cardiology": os.getenv('CARDIOLOGY_SHEET_ID')
 }
 sheets = {key: client.open_by_key(sheet_id).sheet1 for key, sheet_id in SHEET_IDS.items()}
 
@@ -294,7 +294,7 @@ def research():
     return render_template('research.html')
 
 
-LLAMA_API_KEY1 = "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"
+LLAMA_API_KEY1 = os.getenv('GROQ_API_KEY_2')
 llm1 = ChatGroq(api_key=LLAMA_API_KEY1)
 
 @app.route('/get_diseases', methods=['GET'])
